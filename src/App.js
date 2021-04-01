@@ -1,5 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+apiKey = "df810467-4f12-4926-9483-2f0bde6b626f";
+url = "https://api.openchargemap.io/v3/poi/";
 
 function App() {
   return (
