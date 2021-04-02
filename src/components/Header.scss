@@ -1,0 +1,25 @@
+@font-face{
+    font-family: "Movie-regular";
+    src:url("../assets/fonts/Sarabun-Regular.ttf")
+}
+
+@font-face{
+    font-family: "Movie-bold";
+    src:url("../assets/fonts/Sarabun-SemiBold.ttf")
+}
+
+
+$fontR:Movie-regular;
+$fontB:Movie-bold;
+
+.home{
+    background-color: black;
+
+    &__link{
+        font-family: $fontB;
+        font-size: 2.5rem;
+        color: aqua;
+        text-decoration: none;
+        padding: 1.5rem;
+    }
+}
