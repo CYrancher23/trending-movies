@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import "../pages/Movie.css"
+import blank from "../assets/blankpic.jpg"
+
 
 class Movie extends Component {
+
+  
 
     state={
         details:[],
@@ -27,28 +32,37 @@ class Movie extends Component {
     
 
     render() {
+       
         
         console.log(this.state)
         return (
-            <div>
-                <img className="" alt="thumbnail" src={'https://image.tmdb.org/t/p/w200'+this.state.details.poster_path} />
-                <h1>{this.state.details.title}</h1>
-                <p>{this.state.details.overview}</p>
-                <p>{this.state.details.release_date}</p>
-                <p>{this.state.details.vote_average}</p>
-                <a href={this.state.details.homepage}>Watch Here!</a>
-                {/* <p>{this.state.credits.character}</p> */}
-                <div>
+            <div className="movie">
+                <img className="movie__poster" alt="thumbnail" src={'https://image.tmdb.org/t/p/w400'+this.state.details.poster_path} />
+                <h1 className="movie__title">{this.state.details.title}</h1>
+                <p className="movie__description">{this.state.details.overview}</p>
+                <p className="movie__release">Release Date: {new Date(this.state.details.release_date).toLocaleDateString()}</p>
+                <p className="movie__rating">TMDB Rating: {this.state.details.vote_average}</p>
+                <button className="movie__button" type="button"> <a className="movie__button--text" href={this.state.details.homepage}>Watch Here!</a></button>
+                
+             
+                <div className="credits">
                     {this.state.credits?.map((peeps)=>{
+                        
                         return(
-                            <div>
-                                <p>{peeps.character}</p>
-                                <p>{peeps.name}</p>
-                                <img src={'https://image.tmdb.org/t/p/w200'+peeps.profile_path} />
-                            </div>
+                            
+                                <div>
+                                    
+                                    <img className="credits__img" src=
+                                    {peeps.profile_path ? `https://image.tmdb.org/t/p/w200${peeps.profile_path}` : blank}
+                                    />
+                                    <p className="credits__character">{peeps.character}</p>
+                                    <p className="credits__name">{peeps.name}</p>
+                                </div>
+                           
                         )
                     })}
                 </div>
+               
             </div>
         )
     }
