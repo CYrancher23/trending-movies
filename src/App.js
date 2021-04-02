@@ -1,28 +1,29 @@
-import logo from "./logo.svg";
+import React, {Component} from "react"
 import "./App.css";
+import {BrowserRouter, Route, Switch } from "react-router-dom"
+import Home from "./pages/Home"
+import Movie from "./pages/Movie"
+import Header from "./components/Header"
 
-apiKey = "df810467-4f12-4926-9483-2f0bde6b626f";
-url = "https://api.openchargemap.io/v3/poi/";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  apiKey = "72313e8f83e587a790e2420c3e95261f";
+  url = "https://api.themoviedb.org/3/movie/550?";
+
+  render() {
+    return (
+      <div>
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/movie/:id" component={Movie}/>
+          </Switch>
+        </BrowserRouter>
+      </div>
+    )
+  }
 }
+
 
 export default App;
