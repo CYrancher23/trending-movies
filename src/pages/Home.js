@@ -1,11 +1,25 @@
 import React, { Component } from 'react'
+import Trending from "../components/Trending"
+import TrendingList from '../components/TrendingList'
 
-export default class Home extends Component {
+
+ class Home extends Component {
+
+    state={
+
+    }
+    
+
     render() {
         return (
-            <div>
-                
-            </div>
+           <div>
+               <Trending />
+               <TrendingList />
+
+           </div>
         )
     }
 }
+
+
+export default Home
