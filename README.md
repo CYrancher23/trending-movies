@@ -28,5 +28,5 @@ View the site weekly for updated movies. Get details on the movies to see a summ
 
 ## Credits
 
-CYrancher23
+CYrancher23 & jharr246
 
