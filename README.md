@@ -1,8 +1,10 @@
-# Getting Started with Create React App
+# TMDB Top 5 Movies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was completed in a 24 hour period as part of a peer programming brainstation assignment. 
+This web app displays the current week's top 5 trending movies according to TMDB. 
+Created with React, SASS, and the TMDB API
 
-## Available Scripts
+## Installation
 
 In the project directory, you can run:
 
